@@ -1,6 +1,6 @@
 package com.chdarsoft.kotlindersleri.nesnetabanli
 
-class Araba(var renk: String, var hiz: Int, var calisiyorMu: Boolean) {
+data class Araba(var renk: String, var hiz: Int, var calisiyorMu: Boolean) {
 
     //Constructor
     init {
