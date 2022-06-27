@@ -23,6 +23,13 @@ class OyunEkraniActivity : AppCompatActivity() {
         Log.e("Gelen boy", gelenBoy.toString())
         Log.e("Gelen bekar", gelenBekar.toString())
 
+
+        val gelenNesne = intent.getSerializableExtra("nesne") as Kisiler
+        Log.e("Gelen Nesne Ad", gelenNesne.ad.toString())
+        Log.e("Gelen Nesne Yas", gelenNesne.yas.toString())
+        Log.e("Gelen Nesne Boy", gelenNesne.boy.toString())
+        Log.e("Gelen Nesne Bekar", gelenNesne.bekar.toString())
+
         tasarim.buttonBitir.setOnClickListener {
             val intent = Intent(this@OyunEkraniActivity,SonucEkraniActivity::class.java)
             startActivity(intent)

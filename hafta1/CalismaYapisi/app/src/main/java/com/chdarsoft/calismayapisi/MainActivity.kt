@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("yas", 23)
             intent.putExtra("boy", 1.78)
             intent.putExtra("bekar", true)
+
+            val kisi = Kisiler("Mehmet", 34 ,1.97, false)
+            intent.putExtra("nesne",kisi)
+
             startActivity(intent)
         }
 
