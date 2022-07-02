@@ -10,7 +10,7 @@ class OyunEkraniActivity : AppCompatActivity() {
     private lateinit var tasarim:ActivityOyunEkraniBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        tasarim = ActivityOyunEkraniBinding.inflate(layoutInflater)
+            tasarim = ActivityOyunEkraniBinding.inflate(layoutInflater)
         setContentView(tasarim.root)
 
         val gelenAd = intent.getStringExtra("ad")
