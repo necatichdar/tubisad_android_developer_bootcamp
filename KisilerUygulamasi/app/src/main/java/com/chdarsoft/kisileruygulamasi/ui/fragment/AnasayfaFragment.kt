@@ -7,9 +7,12 @@ import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.chdarsoft.kisileruygulamasi.R
 import com.chdarsoft.kisileruygulamasi.data.entity.Kisiler
 import com.chdarsoft.kisileruygulamasi.databinding.FragmentAnasayfaBinding
+import com.chdarsoft.kisileruygulamasi.ui.adapter.KisilerAdapter
 import com.google.android.material.snackbar.Snackbar
 
 class AnasayfaFragment : Fragment(), SearchView.OnQueryTextListener{
@@ -21,15 +24,31 @@ class AnasayfaFragment : Fragment(), SearchView.OnQueryTextListener{
         //acitivity deki özelliklere erişmemizi sağlar
         (activity as AppCompatActivity).setSupportActionBar(tasarim.toolbarAnasayfa)
 
+        tasarim.rv.layoutManager = LinearLayoutManager(requireContext())
+        //tasarim.rv.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
+        //tasarim.rv.layoutManager = StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.HORIZONTAL)
+
+
+        val kisilerListesi  = ArrayList<Kisiler>()
+        val k1 = Kisiler(1,"Ahmet","507234234")
+        val k2 = Kisiler(2,"Necati","501232311")
+        val k3 = Kisiler(3,"Mehmet","507592539")
+        kisilerListesi.add(k1)
+        kisilerListesi.add(k2)
+        kisilerListesi.add(k3)
+
+        val adapter = KisilerAdapter(requireContext(), kisilerListesi)
+        tasarim.rv.adapter = adapter
+
         tasarim.fab.setOnClickListener{
             Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
         }
 
-        tasarim.buttonDetay.setOnClickListener {
+/*        tasarim.buttonDetay.setOnClickListener {
             val kisi = Kisiler(1,"Necati", "5075925339")
             val gecis = AnasayfaFragmentDirections.kisiDetayGecis(kisi)
             Navigation.findNavController(it).navigate(gecis)
-        }
+        }*/
 
         return tasarim.root
     }
