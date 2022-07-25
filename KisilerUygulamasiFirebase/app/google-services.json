@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "223138229170",
+    "firebase_url": "https://kotlin-fb1d0-default-rtdb.firebaseio.com",
+    "project_id": "kotlin-fb1d0",
+    "storage_bucket": "kotlin-fb1d0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223138229170:android:590e8973919fce922212ab",
+        "android_client_info": {
+          "package_name": "com.example.kisileruygulamasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223138229170-d8i9b7p0dkln3ijjqr2kaquv098p8nuk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1smn-3oT5GhGObHg_zg_pEvyusPyGGwM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223138229170-d8i9b7p0dkln3ijjqr2kaquv098p8nuk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
