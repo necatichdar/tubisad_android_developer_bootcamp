@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.chdarsoft.kotlin_bootcamp_bitirme_projesi.ui.fragment.AnasayfaFragment"
+        android:label="fragment_anasayfa"
+        tools:layout="@layout/fragment_anasayfa" >
+        <action
+            android:id="@+id/urunDetayGecis"
+            app:destination="@id/urunDetayFragment" />
+        <action
+            android:id="@+id/sepeteGecis"
+            app:destination="@id/sepetFragment" />
+        <action
+            android:id="@+id/cikisYap"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/anasayfaFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/yaziDetayGecis"
+            app:destination="@id/yaziDetayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.chdarsoft.kotlin_bootcamp_bitirme_projesi.ui.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/anasayfaGecis"
+            app:destination="@id/anasayfaFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepetFragment"
+        android:name="com.chdarsoft.kotlin_bootcamp_bitirme_projesi.ui.fragment.SepetFragment"
+        android:label="fragment_sepet"
+        tools:layout="@layout/fragment_sepet" >
+        <action
+            android:id="@+id/refreshSepet"
+            app:destination="@id/sepetFragment"
+            app:popUpTo="@id/sepetFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/sepetToAnasayfa"
+            app:destination="@id/anasayfaFragment"
+            app:popUpTo="@id/sepetFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/yaziDetayFragment"
+        android:name="com.chdarsoft.kotlin_bootcamp_bitirme_projesi.ui.fragment.YaziDetayFragment"
+        android:label="fragment_yazi_detay"
+        tools:layout="@layout/fragment_yazi_detay" >
+        <argument
+            android:name="yazi"
+            app:argType="com.chdarsoft.kotlin_bootcamp_bitirme_projesi.data.entity.YaziClass" />
+    </fragment>
+    <fragment
+        android:id="@+id/urunDetayFragment"
+        android:name="com.chdarsoft.kotlin_bootcamp_bitirme_projesi.ui.fragment.UrunDetayFragment"
+        android:label="fragment_urun_detay"
+        tools:layout="@layout/fragment_urun_detay" >
+        <argument
+            android:name="yemek"
+            app:argType="com.chdarsoft.kotlin_bootcamp_bitirme_projesi.data.entity.YemekClass" />
+        <action
+            android:id="@+id/anasayfayaGeriDonüs"
+            app:destination="@id/anasayfaFragment"
+            app:popUpTo="@id/urunDetayFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
