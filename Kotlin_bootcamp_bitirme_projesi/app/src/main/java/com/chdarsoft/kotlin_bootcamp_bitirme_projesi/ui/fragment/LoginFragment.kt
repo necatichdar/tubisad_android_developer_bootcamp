@@ -42,7 +42,12 @@ class LoginFragment : Fragment() {
             ad.setPositiveButton("Giriş Yap"){ dialogInterface, i ->
                 val alinanVeri = editTextAlert.text.toString()
                 username = alinanVeri
-                Navigation.findNavController(it).navigate(R.id.anasayfaGecis)
+                if(alinanVeri.isEmpty()){
+                    Toast.makeText(requireContext(),"Lütfen geçerli bir kullanıcı adı giriniz.",Toast.LENGTH_SHORT).show()
+                }else {
+                    Navigation.findNavController(it).navigate(R.id.anasayfaGecis)
+                }
+
             }
             ad.setNegativeButton("Vazgeç"){ dialog,i ->
             }
